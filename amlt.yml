@@ -1,0 +1,39 @@
+description: pymarian
+
+target:
+    service: sing
+    name: lang-sing-mtres-eu
+
+
+environment:
+    registry: marcinjd.azurecr.io
+    image: marian/marian-cuda12.3-ubuntu22.04:latest
+
+    setup:
+      - echo "==== MY SETUP BEGIN ===="
+      - export PATH=$$PWD/bins:~/.local/bin:$$PATH
+      - if [[ ! -d ~/.local/bin ]]; then mkdir -p ~/.local/bin; fi
+      - cp /mnt/tg/data/bins/marian/20240801-1.12.31/marian ~/.local/bin/          # ubuntu22, with MPI
+      - chmod +x ~/.local/bin/marian && marian --version
+      - pip install /mnt/tg/data/bins/marian/20240801-1.12.31/pymarian-*.whl
+      - sudo apt update && sudo apt install hyperfine
+      - echo "==== MY SETUP END ===="
+code:
+    local_dir: $CONFIG_DIR/
+
+storage:
+    data:
+      storage_account_name: tgwus2
+      container_name: data
+      mount_dir: /mnt/tg/data
+      is_output: True
+
+
+jobs:
+    - name: debug
+      sku: 32G8
+      submit_args: &sargs
+        env:
+          AMLT_DOCKERFILE_TEMPLATE: none
+      command:
+        - sleep 5d
