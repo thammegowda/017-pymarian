@@ -11,7 +11,10 @@ import argparse
 import numpy as np
 from tqdm.auto import tqdm
 
+# Blob dir
 RUN_DIR = Path("/mnt/tg/data/papers/2024-pymarian/benchmarks/wmt23-v2")
+# or local dir; TODO: update this path
+RUN_DIR = Path("wmt23")
 log.basicConfig(level=log.INFO)
 
 TABLE_FORMATS = ['human', 'latex']

@@ -4,7 +4,10 @@ set -eu
 # print the results of the loading benchmarks
 delim='\t'
 delim=','
+
 pref="/mnt/tg/data/papers/2024-pymarian/benchmarks/wmt23/loader"
+pref="wmt23/loader"
+
 header1="Model${delim}Time 1GPU${delim}${delim}Time 8GPUs${delim}${delim}Memory (MB) 1GPU${delim}${delim}Memory (MB) 8GPU${delim}"
 header2="Model${delim}Orig${delim}Pymarian${delim}Speedup${delim}${delim}Orig${delim}Pymarian${delim}Speedup${delim}Orig${delim}Pymarian${delim}Orig${delim}Pymarian"
 echo -e "$header1"
