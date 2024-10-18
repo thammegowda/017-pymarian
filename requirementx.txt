@@ -1,2 +1,0 @@
-unbabel-comet==2.2.2
-sacrebleu>=2.4.0

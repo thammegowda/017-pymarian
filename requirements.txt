@@ -1,0 +1,3 @@
+unbabel-comet==2.2.2
+sacrebleu>=2.4.0
+git+https://github.com/google-research/bleurt.git
