@@ -1,5 +1,12 @@
 # Pymarian Benchmark Scripts
 
+This repository contains scripts to reproduce results presented in our PyMarian paper @ EMNLP2024 Demos.
+
+
+* Peer-review: https://openreview.net/forum?id=3BKsyqIieh
+* ArXiv: https://arxiv.org/abs/2408.11853
+* Aclweb : TODO: 
+
 
 ## Files
 * `benchmarks.sh`  -- the main benchmark script that downloads data, runs pymarian, comet-score or bleurt and creates score files
